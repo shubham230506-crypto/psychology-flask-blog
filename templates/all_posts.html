@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<header class="masthead" style="background-image: url('{{ url_for('static', filename='img/post.jpg') }}')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1> POSTS </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+ <div class="container px-4 px-lg-5 ">
+    <div> <a href="/">
+        <button type="button" class="btn btn-danger rounded">Back</button>
+        </a>
+        <a href="/dashboard">
+        <button type="button" class="btn btn-danger rounded">Dashboard</button>
+        </a>
+    </div>
+</div>
+<div class="container px-4 px-lg-5 mt-5">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        {% for post in posts %}
+        <div class="col d-flex justify-content-center">
+            <div class="card hover-zoom shadow-sm rounded-3" style="width: 18rem;">
+                <a href="/post/{{ post.slug }}">
+                    {% set fname = 'img/' + post.img_file %}
+                    <img src="{{ url_for('static', filename=fname) }}" class="img-fluid card-img-top rounded" alt="..." style="height: 200px; object-fit: cover; width: 100%;">
+                    <div class="post-preview card-body">
+                        <h5 class="card-title">{{ post.title }}</h5>
+                        <p class="card-text">{{ post.content[0:50] }}...</p>
+                        <p class="post-meta">
+                            Posted on {{ post.date }}
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div> <!-- छूटा हुआ div यहाँ बंद किया गया है -->
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/about-bg.jpg') }}');">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center"
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="page-heading">
+                            <h1>About Me</h1>
+                            <span class="subheading">This is what I do.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <main class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <p>Welcome to Persona Unveil! Have you ever wondered why we do the things we do? Why do we feel stuck in loops of overthinking, seek escape from reality, or struggle to understand our own emotions?This blog is dedicated to unpacking the complex world of psychology and turning it into simple, actionable insights for your everyday life. Whether you are curious about human behavior, looking for mental health tips, or studying psychological theories, you will find answers here.</p>
+                        <p>I’m TSHUBH, the creator behind this space.[Option A - If you have a degree]: As a psychology student/professional, I spent years studying mental processes and human behavior. But I noticed that textbook psychology is often too rigid or academic for everyday people to understand.[Option B - If you are an enthusiast]: As a passionate psychology enthusiast, I have always been fascinated by how our minds work. My goal is to bridge the gap between complex research and our daily experiences.</p>
+                        <p>On this blog, we dive deep into:Mind Hacks & Habits: Practical tips to improve focus, beat procrastination, and manage stress.Psychology Theories Made Easy: Simple breakdowns of famous concepts (like Piaget's stages, escapism, or cognitive biases).Emotional Well-being: Exploring mental health, relationships, and self-care from a psychological lens.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+{% endblock %}

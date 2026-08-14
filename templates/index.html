@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+<!-- Page Header-->
+<header class="masthead" style="background-image: url('{{ url_for('static', filename='img/home.jpg') }}')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1>Sci(CO)Logy</h1>
+                    <span class="subheading">Stay Curious!</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Main Content-->
+
+
+<div class="container px-4 px-lg-5">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        {% for post in posts %}
+        <div class="col d-flex justify-content-center">
+            <div class="card hover-zoom shadow-sm rounded-3 " style="width: 18rem;" object-fit: cover; width: 100%;">
+            <a href="/post/{{ post.slug }}">
+            {% set fname = 'img/' + post.img_file %}
+                <img src="{{ url_for('static', filename=fname) }}" class="img-fluid card-img-top rounded" alt="..."
+                style="height: 200px; object-fit: cover; width: 100%;">
+                <div class="post-preview card-body">
+                    <h5 class="card-title">{{ post.title }}</h5>
+                    <p class="card-text">{{ post.content[0:50] }}...</p>
+                    <p class="post-meta">
+                Posted by
+                <a href="#!">Persona Unveil</a>
+                on September 24, 2023
+                    </p>
+                 </div>
+            </a>
+            </div>
+        </div>
+        {% endfor %}
+
+        <hr class="my-4" />
+
+
+    </div>
+
+</div>
+<!-- Pager-->
+<div class="d-flex justify-content-end mb-4"><a class="btn btn-outline-danger rounded text-uppercase" href="#!">Older Posts
+        →</a></div>
+
+</div>
+
+
+
+
+        
+</button>
+</div>
+</div>
+</div>
+{% endblock %}

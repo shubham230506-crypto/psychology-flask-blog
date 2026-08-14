@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+{% block content %}
+<!-- Page Header-->
+<header class="masthead" style="background-image: url('{{ url_for('static', filename='img/home.jpg') }}')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1> Dashboard </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div class="container px-4 px-lg-5">
+
+        <h1>EDIT Posts</h1>
+        <a href="/edit/0">
+        <button type="button" class="btn btn-danger rounded">Add New Post</button>
+        </a>
+        <a href="/logout">
+        <button type="button" class="btn btn-danger rounded ">Logout</button>
+        </a>
+        </div>
+        
+<hr>
+<div class="container px-4 px-lg-5">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <table class="table border-primary">
+
+       
+        <thead>
+            <tr>
+            <th scope="col">S_no.</th>
+            <th scope="col">TITLE</th>
+            <th scope="col">DATE</th>
+            <th scope="col">ACTIONS</th>
+            </tr>
+        </thead>
+        {% for post in posts %}
+        <tbody>
+            <tr>
+            <td>{{ post.sno }}</td>
+            <td>{{ post.title }}</td>
+            <td>{{ post.date }}</td>
+            <td><a href="/edit/{{ post.sno }}">
+            <button type="button" class="btn btn-outline-secondary rounded">EDIT</button>
+            </a>
+            <button type="button" class="btn btn-outline-danger rounded" href=#>DELETE</button>
+
+            </td>
+            </tr>
+            
+        </tbody>
+        {% endfor %}
+        </table>
+
+
+    </div>  
+</div>
+
+
+
+
+{% endblock %}

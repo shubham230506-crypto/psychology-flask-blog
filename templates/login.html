@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Persona Unveil</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+</head>
+<body>
+
+<div class="login-wrapper">
+  <div class="login-card">
+      <div class="card-left">
+      <!-- Replace with your local image file source path -->
+      <img src="{{ url_for('static', filename='img/book.svg') }}" alt="Login Graphic" class="vector-img">
+    </div>
+    
+    
+    
+    <!-- Right Column: Form Elements Section -->
+    <div class="card-right">
+      
+      <!-- Social Header Authentication Group -->
+      <div class="social-row">
+        <h2 class="social-heading">Login</h2>
+        
+      </div>
+      
+      <!-- Separation Line Break Divider -->
+      
+      
+      <!-- Interactive Data Capture Form -->
+      <form method = "POST" action="/dashboard">
+         
+        <div class="form-floating"> <input type="email" class="form-control" id="uname" name="uname"
+        placeholder="name@example.com">
+        <label for="floatingInput">Email address</label> </div>
+
+        <div class="form-floating"> <input type="password" class="form-control" id="pass" name="pass"
+        placeholder="Password"> 
+        <label for="floatingPassword">Password</label> </div>
+
+
+        <!-- Interactive Layout Account Utilities -->
+        <div class="options-row">
+          <div class="checkbox-group">
+            <input type="checkbox" id="rememberMe" class="custom-checkbox">
+            <label for="rememberMe" class="checkbox-label">Remember me</label>
+          </div>
+          <a href="#" class="forgot-link">Forgot password?</a>
+        </div>
+        
+        <!-- Access Authentication Submission Action Button -->
+        <button type="submit" class="d-flex justify-content-end btn btn-outline-danger rounded text-uppercase mb-4">LOGIN</button>
+        
+       
+        
+        <!-- Registration Action Target Redirection Footer -->
+        <div class="register-footer">
+          <span>Don't have an account? </span>
+          <a href="/register" class="register-link">Register</a>
+        </div>
+      </form>
+      
+    </div>
+    
+  </div>
+</div>
+
+</body>
+</html>

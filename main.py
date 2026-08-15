@@ -155,7 +155,7 @@ def uploader():
 
 @app.route("/logout")
 def logout():
-    session.pop('user')
+    session.pop('user', None)
     return redirect('/dashboard')
 
 

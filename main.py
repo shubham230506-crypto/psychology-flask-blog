@@ -20,7 +20,7 @@ app = Flask(__name__)
 app.secret_key = os.getenv('SECRET_KEY', 'dev-secret-key')  # Use an environment variable for the secret
 
 
-db_uri = os.getenv('DATABASE_URL', 'mysql+pymysql://root:@localhost/blog')
+db_uri = os.getenv('MYSQL_URL', 'mysql+pymysql://root:@localhost/blog')
 if db_uri.startswith("mysql://"):
     db_uri = db_uri.replace("mysql://", "mysql+pymysql://", 1)
 app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
